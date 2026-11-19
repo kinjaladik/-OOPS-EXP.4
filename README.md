@@ -6,13 +6,10 @@ using namespace std;
 
 class Shape {
 public:
-    // Pure virtual function
     virtual void area() = 0; 
-    
-    virtual ~Shape() {} 
-};
+    virtual ~Shape() {} };
 
-// Derived Class: Circle
+//Circle
 class Circle : public Shape {
 private:
     float radius;
@@ -21,12 +18,11 @@ public:
     Circle(float r) {
         radius = r;
     }
-
     void area() override {
         cout << "Area of Circle = " << (3.1416 * radius * radius) << endl;
     }};
 
-// Derived Class: Rectangle
+//Rectangle
 class Rectangle : public Shape {
 private:
     float length, breadth;
@@ -36,12 +32,11 @@ public:
         length = l;
         breadth = b;
     }
-
     void area() override {
         cout << "Area of Rectangle = " << (length * breadth) << endl;
     }};
 
-// Derived Class: Triangle
+//Triangle
 class Triangle : public Shape {
 private:
     float base, height;
@@ -51,7 +46,6 @@ public:
         base = b;
         height = h;
     }
-
     void area() override {
         cout << "Area of Triangle = " << (0.5 * base * height) << endl;
     }};
@@ -65,11 +59,9 @@ int main() {
     Circle c(5.0);
     Rectangle r(4.0, 6.0);
     Triangle t(5.0, 5.0);
-
     cout << " Runtime Polymorphism Demo \n";
     displayArea(c);
     displayArea(r);
     displayArea(t);
-
     return 0;
 }
